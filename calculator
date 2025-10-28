@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator App</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form action="CalculatorServlet" method="post">
+        <input type="number" name="num1" required>
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="num2" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <div>
+        <h3>Result: 
+            <!-- The result will be displayed here -->
+            <span id="result">
+                <!-- Java will fill this in dynamically -->
+                <% if(request.getAttribute("result") != null) { %>
+                    <%= request.getAttribute("result") %>
+                <% } %>
+            </span>
+        </h3>
+    </div>
+</body>
+</html>
